@@ -52,5 +52,14 @@ default['fail2ban']['services'] = {
         'filter' => 'sshd',
         'logpath' => node['fail2ban']['auth_log'],
         'maxretry' => '6'
+     },
+  'nginx-noscript' => {
+        'enabled' => 'true',
+        'port' => 'ssh',
+        'filter' => 'nginx-noscript',
+        'logpath' => '/var/log/nginx*/*access*.log',
+        'maxretry' => '6',
+        'action' => 'iptables-multiport[name=NoScript, port="http,https"]'
+        'bantime' => '86400 # 1 day'
      }
 }

@@ -24,6 +24,37 @@ package 'fail2ban' do
   action :upgrade
 end
 
+
+cookbook_file "/etc/fail2ban/filter.d/proxy.conf" do
+  source "proxy.conf"
+  owner  "root"
+  group  "root"
+  mode   "0644"
+end
+
+cookbook_file "/etc/fail2ban/filter.d/nginx-noscript.conf" do
+  source "nginx-noscript.conf"
+  owner  "root"
+  group  "root"
+  mode   "0644"
+end
+
+cookbook_file "/etc/fail2ban/filter.d/nginx-auth.conf" do
+  source "nginx-auth.conf"
+  owner  "root"
+  group  "root"
+  mode   "0644"
+end
+
+cookbook_file "/etc/fail2ban/filter.d/nginx-login.conf" do
+  source "nginx-login.conf"
+  owner  "root"
+  group  "root"
+  mode   "0644"
+end
+
+
+
 template '/etc/fail2ban/fail2ban.conf' do
   source 'fail2ban.conf.erb'
   owner 'root'
