@@ -59,7 +59,7 @@ default['fail2ban']['services'] = {
         'filter' => 'nginx-noscript',
         'logpath' => '/var/log/nginx*/*access*.log',
         'maxretry' => '6',
-        'action' => 'iptables-multiport[name=NoScript, port="http,https"]'
+        'action' => 'iptables-multiport[name=NoScript, port="http,https"]',
         'bantime' => '86400 # 1 day'
      }
 }

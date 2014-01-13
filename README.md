@@ -1,7 +1,8 @@
 Description
 ===========
 
-Derived from the Opscode cookbook to monitor NGINX log files.
+Derived from the Opscode cookbook to monitor NGINX log files, and adds a bantime attribute.
+Following the direction from this article: http://snippets.aktagon.com/snippets/554-how-to-secure-an-nginx-server-with-fail2ban
 
 Installs and configures `fail2ban`, a utility that watches logs for failed login attempts
 and blocks repeat offenders with firewall rules.  On Redhat systems this cookbook will
