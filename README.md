@@ -1,6 +1,8 @@
 Description
 ===========
 
+Derived from the Opscode cookbook to monitor NGINX log files.
+
 Installs and configures `fail2ban`, a utility that watches logs for failed login attempts
 and blocks repeat offenders with firewall rules.  On Redhat systems this cookbook will
 enable the EPEL repository in order to retrieve the fail2ban package.
@@ -87,9 +89,8 @@ This rsyslog parameter is default ON for ubuntu 12.04 LTS for example.
 License and Author
 ==================
 
-Author:: Joshua Timberman
+Author:: Indika Piyasena
 
-Copyright:: 2009-2013, Opscode, Inc
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
