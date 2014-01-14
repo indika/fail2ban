@@ -60,6 +60,13 @@ cookbook_file "/etc/fail2ban/filter.d/w00tw00t.conf" do
   mode   "0644"
 end
 
+# Add the test script
+cookbook_file "/etc/fail2ban/test_bans.sh" do
+  source "test_bans.sh"
+  owner  "root"
+  group  "root"
+  mode   "0644"
+end
 
 
 template '/etc/fail2ban/fail2ban.conf' do

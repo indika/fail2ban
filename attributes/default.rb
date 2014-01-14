@@ -53,15 +53,56 @@ default['fail2ban']['services'] = {
         'logpath' => node['fail2ban']['auth_log'],
         'maxretry' => '6'
      },
+  'ssh-ddos' => {
+        'enabled' => 'true',
+        'port' => 'ssh,sftp',
+        'filter' => 'sshd-ddos',
+        'logpath' => '/var/log/messages',
+        'maxretry' => '2'
+     },
+  'nginx-auth' => {
+        'enabled' => 'true',
+        'port' => 'http,https',
+        'filter' => 'nginx-auth',
+        'logpath' => '/var/log/nginx*/*access*.log',
+        'maxretry' => '6',
+        'bantime' => '600'
+     },
+  'nginx-login' => {
+        'enabled' => 'true',
+        'port' => 'http,https',
+        'filter' => 'nginx-login',
+        'logpath' => '/var/log/nginx*/*access*.log',
+        'maxretry' => '6',
+        'bantime' => '600'
+     },
+  'nginx-badbots' => {
+        'enabled' => 'true',
+        'port' => 'http,https',
+        'filter' => 'apache-badbots',
+        'logpath' => '/var/log/nginx*/*access*.log',
+        'maxretry' => '6',
+        'bantime' => '86400'
+     },
   'nginx-noscript' => {
         'enabled' => 'true',
+        'port' => 'http,https',
         'filter' => 'nginx-noscript',
+        'logpath' => '/var/log/nginx*/*access*.log',
+        'maxretry' => '6',
+        'bantime' => '86400'
+     },
+  'nginx-proxy' => {
+        'enabled' => 'true',
+        'port' => 'http,https',
+        'filter' => 'nginx-proxy',
         'logpath' => '/var/log/nginx*/*access*.log',
         'maxretry' => '6',
         'bantime' => '86400'
      },
   'w00tw00t' => {
         'enabled' => 'true',
+        'port' => 'http,https',
         'filter' => 'w00tw00t',
         'logpath' => '/var/log/nginx*/*access*.log',
         'maxretry' => '1',
