@@ -59,6 +59,13 @@ default['fail2ban']['services'] = {
         'filter' => 'nginx-noscript',
         'logpath' => '/var/log/nginx*/*access*.log',
         'maxretry' => '6',
-        'bantime' => '86400 # 1 day'
+        'bantime' => '86400'
+     },
+  'w00tw00t' => {
+        'enabled' => 'true',
+        'filter' => 'w00tw00t',
+        'logpath' => '/var/log/nginx*/*access*.log',
+        'maxretry' => '1',
+        'bantime' => '86400'
      }
 }

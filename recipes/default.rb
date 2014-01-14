@@ -53,6 +53,13 @@ cookbook_file "/etc/fail2ban/filter.d/nginx-login.conf" do
   mode   "0644"
 end
 
+cookbook_file "/etc/fail2ban/filter.d/w00tw00t.conf" do
+  source "w00tw00t.conf"
+  owner  "root"
+  group  "root"
+  mode   "0644"
+end
+
 
 
 template '/etc/fail2ban/fail2ban.conf' do
