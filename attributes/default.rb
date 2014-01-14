@@ -55,7 +55,6 @@ default['fail2ban']['services'] = {
      },
   'nginx-noscript' => {
         'enabled' => 'true',
-        'port' => 'ssh',
         'filter' => 'nginx-noscript',
         'logpath' => '/var/log/nginx*/*access*.log',
         'maxretry' => '6',
