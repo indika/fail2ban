@@ -91,7 +91,7 @@ action = %(<%= node['fail2ban']['action'] %>)s
 # action, port, logpath, etc) in that section within jail.local
 
 # This is the original action substitution
-# action = %(<%= param['action'] %>)s
+# action = %( param['action'] )s
 
 
 <% @node['fail2ban']['services'].each do |service, param| %>
