@@ -57,7 +57,7 @@ default['fail2ban']['services'] = {
         'enabled' => 'true',
         'port' => 'http,https',
         'filter' => 'w00tw00t',
-        'action' => 'action = iptables-multiport[name=w00tw00t, port="http,https"]',
+        'action' => 'iptables-multiport[name=w00tw00t, port="http,https"]',
         'logpath' => '/var/log/nginx*/*access*.log',
         'maxretry' => '1',
         'bantime' => '86400'
