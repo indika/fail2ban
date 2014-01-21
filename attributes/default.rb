@@ -52,8 +52,25 @@ default['fail2ban']['services'] = {
         'filter' => 'sshd',
         'logpath' => node['fail2ban']['auth_log'],
         'maxretry' => '6'
+     },
+  'w00tw00t' => {
+        'enabled' => 'true',
+        'port' => 'http,https',
+        'filter' => 'w00tw00t',
+        'action' => 'action = iptables-multiport[name=w00tw00t, port="http,https"]',
+        'logpath' => '/var/log/nginx*/*access*.log',
+        'maxretry' => '1',
+        'bantime' => '86400'
      }
 }
+  # 'nginx-badbots' => {
+  #       'enabled' => 'true',
+  #       'port' => 'http,https',
+  #       'filter' => 'apache-badbots',
+  #       'logpath' => '/var/log/nginx*/*access*.log',
+  #       'maxretry' => '6',
+  #       'bantime' => '86400'
+  #    },
 
   # 'ssh-ddos' => {
   #       'enabled' => 'true',
@@ -78,14 +95,6 @@ default['fail2ban']['services'] = {
   #       'maxretry' => '6',
   #       'bantime' => '600'
   #    },
-  # 'nginx-badbots' => {
-  #       'enabled' => 'true',
-  #       'port' => 'http,https',
-  #       'filter' => 'apache-badbots',
-  #       'logpath' => '/var/log/nginx*/*access*.log',
-  #       'maxretry' => '6',
-  #       'bantime' => '86400'
-  #    },
   # 'nginx-noscript' => {
   #       'enabled' => 'true',
   #       'port' => 'http,https',
@@ -102,11 +111,3 @@ default['fail2ban']['services'] = {
   #       'maxretry' => '6',
   #       'bantime' => '86400'
   #    },
-  # 'w00tw00t' => {
-  #       'enabled' => 'true',
-  #       'port' => 'http,https',
-  #       'filter' => 'w00tw00t',
-  #       'logpath' => '/var/log/nginx*/*access*.log',
-  #       'maxretry' => '1',
-  #       'bantime' => '86400'
-  #    }
