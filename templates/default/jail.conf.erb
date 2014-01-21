@@ -90,6 +90,9 @@ action = %(<%= node['fail2ban']['action'] %>)s
 # Optionally you may override any other parameter (e.g. banaction,
 # action, port, logpath, etc) in that section within jail.local
 
+# This is the original action substitution
+# action = %(<%= param['action'] %>)s
+
 
 <% @node['fail2ban']['services'].each do |service, param| %>
 [<%= service %>]
@@ -103,7 +106,7 @@ maxretry = <%= param['maxretry'] %>
 protocol = <%= param['protocol'] %>
 <% end %>
 <% if param['action'] %>
-action = %(<%= param['action'] %>)s
+action = <%= param['action'] %>
 <% end %>
 <% if param['banaction'] %>
 banaction = <%= param['banaction'] %>
