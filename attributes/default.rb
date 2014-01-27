@@ -60,7 +60,7 @@ default['fail2ban']['services'] = {
         'action' => 'iptables-multiport[name=w00tw00t, port="http,https"]',
         'logpath' => '/var/log/nginx*/*access*.log',
         'maxretry' => '1',
-        'bantime' => '86400'
+        'bantime' => '604800'
      }
 }
   # 'nginx-badbots' => {
