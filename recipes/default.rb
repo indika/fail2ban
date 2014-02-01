@@ -68,6 +68,14 @@ cookbook_file "/etc/fail2ban/test_bans.sh" do
   mode   "0644"
 end
 
+# Add the test script
+cookbook_file "/etc/fail2ban/example.log" do
+  source "example.log"
+  owner  "root"
+  group  "root"
+  mode   "0644"
+end
+
 
 template '/etc/fail2ban/fail2ban.conf' do
   source 'fail2ban.conf.erb'

@@ -61,6 +61,15 @@ default['fail2ban']['services'] = {
         'logpath' => '/var/log/nginx*/*access*.log',
         'maxretry' => '1',
         'bantime' => '604800'
+     },
+  'nginx-noscript' => {
+        'enabled' => 'true',
+        'port' => 'http,https',
+        'filter' => 'nginx-noscript',
+        'action' => 'iptables-multiport[name=nginx-noscript, port="http,https"]',
+        'logpath' => '/var/log/nginx*/*access*.log',
+        'maxretry' => '1',
+        'bantime' => '86400'
      }
 }
   # 'nginx-badbots' => {
@@ -94,14 +103,6 @@ default['fail2ban']['services'] = {
   #       'logpath' => '/var/log/nginx*/*access*.log',
   #       'maxretry' => '6',
   #       'bantime' => '600'
-  #    },
-  # 'nginx-noscript' => {
-  #       'enabled' => 'true',
-  #       'port' => 'http,https',
-  #       'filter' => 'nginx-noscript',
-  #       'logpath' => '/var/log/nginx*/*access*.log',
-  #       'maxretry' => '6',
-  #       'bantime' => '86400'
   #    },
   # 'nginx-proxy' => {
   #       'enabled' => 'true',
